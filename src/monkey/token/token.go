@@ -52,15 +52,7 @@ type Token struct {
 	Literal string
 }
 
-var keywords = map[string]TokenType{
-	"fn":     FUNCTION,
-	"let":    LET,
-	"true":   TRUE,
-	"false":  FALSE,
-	"if":     IF,
-	"else":   ELSE,
-	"return": RETURN,
-}
+var keywords = getRandomKeywords()
 
 func LookupIdent(ident string) TokenType {
 	if tok, ok := keywords[ident]; ok {
